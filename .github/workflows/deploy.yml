@@ -20,6 +20,7 @@ jobs:
           path: build
   deploy:
     name: Deploy to FTP
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
