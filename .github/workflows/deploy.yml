@@ -32,9 +32,9 @@ jobs:
       - name: List CWD Contents
         run: ls -alh
       - name: Upload Build
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        # uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        uses: sebastianpopp/ftp-action@releases/v1
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USER }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
